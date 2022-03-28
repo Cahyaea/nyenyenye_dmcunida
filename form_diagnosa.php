@@ -174,7 +174,7 @@
                                         <option> Diagnosa Penyakit </option>
                                         <?php if (mysqli_num_rows($d) > 0) { ?>
                                             <?php while ($row = mysqli_fetch_array($d)) { ?>
-                                                <option value = "<?php echo $row['kode'] ?>"><?php echo $row['deskripsi'] ?></option>
+                                                <option value = "<?php echo $row['kode'] ?>"><?php echo $row['kode'] . " " . $row['deskripsi'] ?></option>
                                             <?php } ?>
                                         <?php } ?>
                                     </select>
