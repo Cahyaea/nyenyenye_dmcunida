@@ -174,7 +174,11 @@
                                         <option> Diagnosa Penyakit </option>
                                         <?php if (mysqli_num_rows($d) > 0) { ?>
                                             <?php while ($row = mysqli_fetch_array($d)) { ?>
+<<<<<<< HEAD
                                                 <option value = "<?php echo $row['kode'] ?>"><?php echo $row['kode'].'-'. $row['deskripsi'] ?></option>
+=======
+                                                <option value = "<?php echo $row['kode'] ?>"><?php echo $row['kode'] . " " . $row['deskripsi'] ?></option>
+>>>>>>> 864dc963170c6d43b48d310c2e06841ccd36908e
                                             <?php } ?>
                                         <?php } ?>
                                     </select>
