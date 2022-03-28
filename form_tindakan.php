@@ -180,7 +180,7 @@
                                         <option> Tindakan </option>
                                         <?php if (mysqli_num_rows($d) > 0) { ?>
                                             <?php while ($row = mysqli_fetch_array($d)) { ?>
-                                                <option value = "<?php echo $row['code'] ?>"><?php echo $row['description'] ?></option>
+                                                <option value = "<?php echo $row['code'] ?>"><?php echo $row['code'].'-'. $row['description'] ?></option>
                                             <?php } ?>
                                         <?php } ?>
                                     </select>
