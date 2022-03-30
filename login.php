@@ -29,7 +29,7 @@
                     </div>
                     <div class="signin-form">
                         <h2 class="form-title">Sign In</h2>
-                        <form method="POST" class="register-form" action="admin.php" name="login">
+                        <form method="POST" class="register-form" action="login_user.php" name="login">
                             <div class="form-group">
                                 <label for="nama_user"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="nama_user" id="your_name" placeholder="Username"/>

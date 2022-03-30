@@ -5,14 +5,14 @@ $password=$_POST['password'];
 // pastikan username dan password adalah berupa huruf atau angka.
 if (ctype_alnum($nama_user) OR ctype_alnum($password)){
 
-    $login=mysqli_query($connect,"SELECT * FROM user WHERE nama_user='$nama_user' AND password='$password'");
+    $login=mysqli_query($connect,"SELECT * FROM user WHERE username='$nama_user' AND password='$password'");
 
 	$ketemu=mysqli_num_rows($login);
 	if($ketemu>0){	
-		$r=mysqli_fetch_array($login);
+		// $r=mysqli_fetch_array($login);
 		session_start();
-		$_SESSION['nama_user']=$r['nama_user'];
-		$_SESSION['password']=$r['password'];		
+		$_SESSION['nama_user']=$nama_user;
+		$_SESSION['password']=$password;		
 		// echo "user : ".$_SESSION['nama_user']."<br> pass :".$_SESSION['password']."";
 		// exit();
 		header('location:admin.php');

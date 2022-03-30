@@ -47,7 +47,7 @@ session_start();
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name"><?php echo "".$_SESSION['nama_user']."";?></h5>
-                                    <span class="status"></span><span class="ml-2">Available</span>
+                                    <span class="status"></span><span class="ml-2">Available <?php echo $_SESSION['nama_user'];?></span>
                                 </div>
                                 <a class="dropdown-item" href="index.html"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
