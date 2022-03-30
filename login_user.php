@@ -9,10 +9,11 @@ if (ctype_alnum($nama_user) OR ctype_alnum($password)){
 
 	$ketemu=mysqli_num_rows($login);
 	if($ketemu>0){	
-		// $r=mysqli_fetch_array($login);
+		$r=mysqli_fetch_array($login);
 		session_start();
-		$_SESSION['nama_user']=$nama_user;
-		$_SESSION['password']=$password;		
+		$_SESSION['nama_user']=$r['username'];
+		$_SESSION['password']=$r['password'];		
+		$_SESSION['kategori_user']=$r['kategori_user'];		
 		// echo "user : ".$_SESSION['nama_user']."<br> pass :".$_SESSION['password']."";
 		// exit();
 		header('location:admin.php');
