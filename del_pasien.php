@@ -1,7 +1,15 @@
 <?php 
     include_once('koneksi.php');
     $id_pasien = $_GET['id'];
-    mysqli_query($connect, "DELETE FROM data_pasien as d, anamnese as a, registrasi as r,diagnosa_pasien as g, tindakan as t WHERE id_pasien='$id_pasien' AND d.id_pasien=r.no_rm AND a.id=r.id_anamnese AND r.id=g.registrasi_id AND t.registrasi_id=r.id");
+    echo $id_pasien;
+    
+    mysqli_query($connect, "DELETE FROM data_pasien WHERE id_pasien='$id_pasien'");
+    mysqli_query($connect, "DELETE FROM anamnese WHERE id='$id_pasien'");
+    mysqli_query($connect, "DELETE FROM registrasi WHERE id='$id_pasien'");
+    mysqli_query($connect, "DELETE FROM diagnosa_pasien WHERE id='$id_pasien'");
+    mysqli_query($connect, "DELETE FROM tindakan WHERE id='$id_pasien'");
+
+    // mysqli_query($connect, "DELETE FROM data_pasien WHERE id_pasien='$id_pasien'");
     
     header("location:buat_dsb.php");
 ?>
