@@ -171,7 +171,7 @@ if (!isset($_SESSION['nama_user'])) {
                                                       
 
                                                       <td>
-                                                        <a href="del_user.php?id=<?php echo $r['id']; ?>" class="btn btn-danger btn-sm" name="hapus" onclick="return confirm('Yakin?')">Delete</a>
+                                                        <a href="del_user.php?id=<?php echo $r['id']; ?>" class="btn btn-danger btn-sm" name="hapus" onclick="return confirm('Apakah anda yakin akan menghapus?')">Delete</a>
                                                         </button>
                                                       </td>
                                                     </tr>

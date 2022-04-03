@@ -250,7 +250,7 @@
 
          
          <a href="buat_dsb.php" class="btn btn-warning btn-sm">Kembali</a>
-         <a href="del_pasien.php?id=<?php echo $id_pasien; ?>" class="btn btn-danger btn-sm" name="hapus">Delete</a>
+         <a href="del_pasien.php?id=<?php echo $id_pasien; ?>" class="btn btn-danger btn-sm" name="hapus" onclick="return confirm('Apakah anda yakin akan menghapus?')">Delete</a>
         
         <br>
         <br>
