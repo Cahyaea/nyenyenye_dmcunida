@@ -83,10 +83,14 @@ session_start();
                                 <a class="nav-link active" href="buat_dsb.php"><i class="fas fa-address-card"></i>Registrasi Pasien</a>
                             </li>
                             
-                            <li class="nav-item">
+                            <?php
+                            if ($_SESSION['kategori_user'] == 1){
+                                ?>
+                                <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="far fa-user"></i>User</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
+                                        
                                         <li class="nav-item">
                                             <a class="nav-link" href="buat_user.php">Tambah User</a>
                                         </li>
@@ -96,6 +100,9 @@ session_start();
                                     </ul>
                                 </div>
                             </li>
+                            <?php
+                            }
+                            ?>
                             
                                     </ul>
                                 </div>

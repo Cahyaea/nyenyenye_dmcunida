@@ -89,12 +89,16 @@ if (!isset($_SESSION['nama_user'])) {
                                 <a class="nav-link active" href="#"><i class="fas fa-address-card"></i>Registrasi Pasien</a>
                             </li>
                             
-                            <li class="nav-item">
+                            <?php
+                            if ($_SESSION['kategori_user'] == 1){
+                                ?>
+                                <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="far fa-user"></i>User</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
+                                        
                                         <li class="nav-item">
-                                            <a class="nav-link " href="buat_user.php">Tambah User</a>
+                                            <a class="nav-link" href="buat_user.php">Tambah User</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="list_user.php">List User</a>
@@ -102,6 +106,9 @@ if (!isset($_SESSION['nama_user'])) {
                                     </ul>
                                 </div>
                             </li>
+                            <?php
+                            }
+                            ?>
                             
                                     </ul>
                                 </div>
@@ -165,15 +172,26 @@ if (!isset($_SESSION['nama_user'])) {
                                                       <td><?php echo $r['rujukan']?></td>
                                                       
                                                       <td>
-                                                        
+                                                       <?php
+                                                       if ($_SESSION['kategori_user'] == 1 || $_SESSION['kategori_user'] == 2){
+                                                       ?> 
                                                         <a href="form_anamnesa.php?id_pasien=<?php echo $r['id_pasien']; ?>" class="btn btn-info btn-sm" name="anamnesa">Anamnesis</a>
-                                                        </button>
+                                                        <?php
+                                                       }
+
+                                                       if ($_SESSION['kategori_user'] == 1 || $_SESSION['kategori_user'] == 3){
+                                                        ?>
                                                         <a href="form_diagnosa.php?id_pasien=<?php echo $r['id_pasien']; ?>" class="btn btn-warning btn-sm" name="diagnosa">Diagnosis</a>
-                                                        </button>
+                                                        
                                                         <a href="form_tindakan.php?id_pasien=<?php echo $r['id_pasien']; ?>" class="btn btn-secondary btn-sm" name="tindakan">Tindakan</a>
-                                                        </button>
+                                                       <?php
+                                                       }
+                                                       if ($_SESSION['kategori_user'] == 1 || $_SESSION['kategori_user'] == 2){
+                                                       ?>
                                                         <a href="view_pasien.php?id_pasien=<?php echo $r['id_pasien']; ?>" class="btn btn-success btn-sm">View</a>
-                                                        </button>
+                                                        <?php
+                                                       }
+                                                        ?>
                                                         
         
                                                       </td>

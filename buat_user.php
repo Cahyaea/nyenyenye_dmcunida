@@ -87,12 +87,16 @@ if (!isset($_SESSION['nama_user'])) {
                                 <a class="nav-link" href="#"><i class="fas fa-address-card"></i>Registrasi Pasien</a>
                             </li>
                             
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="far fa-user"></i>User</a>
+                            <?php
+                            if ($_SESSION['kategori_user'] == 1){
+                                ?>
+                                <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="far fa-user"></i>User</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
+                                        
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="#">Tambah User</a>
+                                            <a class="nav-link" href="buat_user.php">Tambah User</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="list_user.php">List User</a>
@@ -100,6 +104,9 @@ if (!isset($_SESSION['nama_user'])) {
                                     </ul>
                                 </div>
                             </li>
+                            <?php
+                            }
+                            ?>
                             
                                     </ul>
                                 </div>
@@ -135,21 +142,26 @@ if (!isset($_SESSION['nama_user'])) {
                                 <form action="insert_user.php" method="post"">
                                 <h3 class="text-center title-login font-weight-bold">Tambah User</h3>
                                     <br>
-                                        <div class="form-group" >
-                                            <input type="text" class="form-control" id="validationServerUsername" name="id_user" placeholder="Id User" required>
-                                        </div>
 
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="validationServerUsername" name="nama_user" placeholder="Nama" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="validationServerUsername" name="password" placeholder="Password" required>
+                                            <input type="text" class="form-control" id="validationServerUsername" name="username" placeholder="Username" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleFormControlFile1">Masukkan Foto Anda</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="foto" required>
+                                            <select class="form-control" name="kategori_user" Required>
+                                            <option value="">User</option>
+                                                <option value="1">Admin</option>
+                                                <option value="2">Staff</option>
+                                                <option value="3">Dokter</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="validationServerUsername" name="password" placeholder="Password" required>
                                         </div>
                                         
                                         <button type="submit" class="btn btn-primary btn-sm" name="tambah_user">Daftar</button>
